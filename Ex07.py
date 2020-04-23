@@ -10,6 +10,7 @@ import sys
 from Utils import transform_NN_to_NA, get_active_archs
 from scipy.optimize import linprog
 
+# This matrix represent a Nodo-Nodo graph
 matrix_node_node = numpy.array([[ 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #s0
                                 [ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], #s1
                                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], #s2
@@ -92,7 +93,7 @@ for i in range(len(result.x)):
     print("\t{} -> {}".format(arc_idxs[i], result.x[i].astype(int)))
 
 max_flow = result.fun * - 1 # Mult x -1 since the new arch added has negative cost 
-print("\n\tThe minimun cost is {:.2f} \n".format(max_flow))
+print("\n\tThe maximum flow is {:.2f} \n".format(max_flow))
 
 
 
