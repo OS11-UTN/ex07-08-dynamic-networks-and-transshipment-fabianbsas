@@ -7,7 +7,7 @@ Created on Mon Apr 20 17:24:43 2020
 """
 import numpy
 import sys
-from Utils import transform_NN_to_NA, get_active_archs
+from Utils import transform_NN_to_NA
 from scipy.optimize import linprog
 
 # This matrix represent a Nodo-Nodo graph
@@ -88,7 +88,7 @@ result = linprog(cost_vector, A_eq = Aeq, b_eq=beq, bounds=bounds, method="simpl
 # Resuts 
 
 print("\n\n## Results ## \n\n")
-print("Quantities sent through each arc: ")
+print("Maximum flow send through each arc: ")
 for i in range(len(result.x)):
     print("\t{} -> {}".format(arc_idxs[i], result.x[i].astype(int)))
 

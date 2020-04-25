@@ -5,7 +5,7 @@
 """
 import numpy
 import sys
-from Utils import transform_NN_to_NA, get_active_archs
+from Utils import transform_NN_to_NA
 from scipy.optimize import linprog
 
 
@@ -95,9 +95,6 @@ for i in range(len(arc_idxs)):
     
 
 
-
-        
-    
 
 
 
